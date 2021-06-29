@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
 
-class Score_keeper extends Component{
-    constructor(props){
+class Score_keeper extends Component {
+    constructor(props) {
         super(props);
-        this.state={score:0}
+        this.state = { score: 0 }
+        this.singleKill = this.singleKill.bind(this);
     }
-    render(){
-        return(
-            <h1>Hii!</h1>
+    singleKill() {
+        this.setState({ score: this.state.score + 1 })
+    }
+    render() {
+        return (
+            <div>
+                <h1>
+                    Score is: {this.state.score}
+                </h1>
+                <button>Single Kill!!</button>
+            </div>
         )
     }
 }
